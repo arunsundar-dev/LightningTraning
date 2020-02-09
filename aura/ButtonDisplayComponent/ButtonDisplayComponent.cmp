@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,force:hasSObjectName" access="global" >
+    <aura:attribute name="clabel" type="String" default="{!$Label.c.Label_test_for_lightning}"/>
+    <aura:if isTrue="{!v.sObjectName == 'Account'}">
+        <lightning:button label="Open Account" variant="brand" title="Neutral action" onclick=""/>
+        <aura:set attribute="else">
+        	<lightning:button label="Open Opportunity" variant="brand" title="Neutral action" onclick=""/>
+        </aura:set>
+    </aura:if>
+    <lightning:button label="Button to be visible" variant="brand" title="Neutral action" onclick="" disabled="{!v.clabel=='false'}"/>
+</aura:component>

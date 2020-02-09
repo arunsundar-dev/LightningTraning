@@ -1,0 +1,5 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:handler name="testEvent" event="c:myCustomEvent" action="{!c.receiveEvent}"></aura:handler>
+    This is parent component
+    <c:ChildComponent></c:ChildComponent>
+</aura:component>

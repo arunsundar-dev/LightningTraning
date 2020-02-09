@@ -1,0 +1,26 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	Hello Arun !!
+    <aura:attribute name="myval" type="String" default="test"></aura:attribute>
+    <aura:attribute name="boolval" type="boolean" default="false"/>
+    
+    <aura:attribute name="inpVal" type="String"/>
+    
+    <aura:handler name="init" value="this" action="{!c.init}"></aura:handler>
+    
+    {!v.myval}<br></br>
+    {!v.boolval}
+    
+    <aura:if isTrue="{!v.boolval}">
+    	boolean is true
+        <aura:set attribute="else">
+            boolean is false
+        </aura:set>
+    </aura:if>
+    
+    <lightning:input type="text" name="input1" label="Enter a text" value="{!v.inpVal}"/>
+    <lightning:input type="date" name="input1" label="Enter a date" />
+    <lightning:input type="checkbox" label="Please select" name="input1" checked="true"/>
+    <lightning:input type="color" name="color" label="Favorite Color"/>
+    
+    <lightning:button label="Click" variant="brand" title="Neutral action" onclick="{! c.myButtonClick }"/>
+</aura:component>

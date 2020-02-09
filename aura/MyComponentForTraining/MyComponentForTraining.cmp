@@ -1,0 +1,13 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute type="String" name="inpval"></aura:attribute>
+    <lightning:button variant="brand" label="Open Account" title="Brand action" onclick="{! c.openAccount }" />
+    <lightning:button variant="brand" label="Open opportunity" title="Brand action" onclick="{! c.openOppty }" />
+    
+    <lightning:button variant="brand" label="Show Toast" title="Brand action" onclick="{! c.showToast }" />
+	{!v.inpval}
+	<lightning:input name="input1" label="Enter some text" type="text" value="{!v.inpval}" onchange="{!c.changeVal}" />
+    
+    <!--button with same name and same function -->
+    <lightning:button aura:id="btn1" name="click button" variant="brand" label="Button1" title="Brand action" onclick="{! c.buttonAction }" />
+    <lightning:button aura:id="btn2" name="click button" variant="brand" label="Button2" title="Brand action" onclick="{! c.buttonAction }" />
+</aura:component>

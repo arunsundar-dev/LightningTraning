@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="clabel" type="boolean" default="{!$Label.c.Label_test_for_lightning}"/>
+    <aura:attribute name="inpVal" type="String"></aura:attribute>
+    <aura:attribute name="firstName" type="String"></aura:attribute>
+    <aura:attribute name="secondName" type="String"></aura:attribute>
+    <aura:attribute name="errormessage" type="String"></aura:attribute>
+    <aura:attribute name="gmail" type="String"></aura:attribute>
+    
+    <ui:outputText value="{!v.errormessage}"/>
+    <lightning:input type="text" name="input1" label="Enter Full name" value="{!v.inpVal}"/>
+    First name: <ui:outputText value="{!v.firstName}"/><br></br>
+    Last name: <ui:outputText value="{!v.secondName}"/><br></br>
+    gmail: <ui:outputText value="{!v.gmail}"/><br></br>
+    <lightning:button aura:id="changeButton" label="Click" variant="brand" title="Neutral action" onclick="{! c.myButtonClick }" />
+    <lightning:button label="Get Gmail ID" variant="brand" title="Neutral action" onclick="{! c.createGmail }"/>
+    
+    This is from custom label: {!$Label.c.Label_test_for_lightning}
+    User information: {!$User.Id}
+    <img src="{!$Resource.TestImage}" width="300" height="300"></img>
+    The record Id is: {!v.recordId}
+</aura:component>

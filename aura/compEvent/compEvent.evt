@@ -1,0 +1,5 @@
+<aura:event type="COMPONENT" description="Event template" >
+	<aura:attribute name="firstName" type="String"></aura:attribute>
+    <aura:attribute name="secondName" type="String"></aura:attribute>
+
+</aura:event>

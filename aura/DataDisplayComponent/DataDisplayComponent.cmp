@@ -1,0 +1,29 @@
+<aura:component controller="myController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,force:hasRecordId" access="global" >
+	
+    <aura:handler name="init" value="this" action="{!c.getData}"></aura:handler>
+    
+    <aura:attribute name="oppty" type="Opportunity" default="{ 'sobjectType': 'Opportunity' }"></aura:attribute>
+	<aura:attribute name="tableData" type="list"></aura:attribute>
+    <aura:attribute name="columns" type="list"></aura:attribute>
+    <force:inputField value="{!v.oppty.Name}" />
+    <force:inputField value="{!v.oppty.StageName}" />
+    <force:inputField value="{!v.oppty.Type}" />
+    <force:inputField value="{!v.oppty.CloseDate}" />
+    <lightning:button variant="brand" name="getOpportunity" label="getOpportunity" onclick="{!c.passParams}"/> 
+    <lightning:button variant="brand" name="updateoppty" label="updateOppty" onclick="{!c.updateOppty}"/> 
+    <lightning:datatable
+                keyField="id"
+                data="{! v.tableData }"
+                columns="{! v.columns }"
+                hideCheckboxColumn="true"/>
+    <aura:iteration items="{!v.tableData}" var="op">
+         <aura:if isTrue="{!op.StageName !='Closed Lost'}"> 
+            <table>
+                <tr>
+                    <td>{!op.Name}</td>
+                    <td>{!op.CloseDate}</td>
+                </tr>
+            </table>
+        </aura:if> 
+    </aura:iteration>
+</aura:component>

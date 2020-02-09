@@ -1,0 +1,22 @@
+<template>
+    Hello LWC !!!   {myAttribute}
+
+    <lightning-input type="text" label="Enter some text" value={inpval} onchange={calljs}></lightning-input>
+    <lightning-input type="date" name="dateField" label="Enter date" onchange={calljs}></lightning-input>
+    <lightning-input type="toggle" name="toggleField" label="toggle" onchange={calljs}></lightning-input>
+
+    this is entered in text {inpval} <br></br>
+    this is entered in date {inpdate} <br></br>
+    this is entered in toggle {inptoggle} <br></br>
+
+    userid : {userid} <br></br>
+    label : {lable} <br></br>
+
+    <!-- <image src={myimage}></image> -->
+
+    <lightning-input type="text" label="Enter youtube URL" value={inpval} onchange={callYoutubeId}></lightning-input>
+    <iframe src={yurl}></iframe>
+
+    <lightning-button variant="brand" label="Click To Showtoast" title="Primary action" onclick={showToast} class="slds-m-left_x-small"></lightning-button>
+
+</template>
