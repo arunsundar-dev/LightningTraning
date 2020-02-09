@@ -1,0 +1,12 @@
+<aura:component controller="myController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:handler name="init" value="this" action="{!c.onLoad}"></aura:handler>
+    <aura:attribute name="data" type="list"></aura:attribute>
+    <aura:attribute name="columns" type="list"></aura:attribute>
+    <aura:attribute name="inputval" type="String"></aura:attribute>
+    <lightning:input name="input1" label="Enter some text" onchange="{!c.search}" value="{!v.inputval}"/>
+    <lightning:datatable
+                keyField="id"
+                data="{! v.data }"
+                columns="{! v.columns }"
+                hideCheckboxColumn="true"/>
+</aura:component>

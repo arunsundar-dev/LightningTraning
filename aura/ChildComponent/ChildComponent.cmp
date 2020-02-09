@@ -1,0 +1,5 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:registerEvent name="testEvent" type="c.myCustomEvent"></aura:registerEvent>
+    THis is child component
+    <lightning:button variant="brand" label="Click!!" title="Click" onclick="{! c.handleChildClick }" />
+</aura:component>

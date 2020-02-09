@@ -1,0 +1,55 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,force:hasRecordId" access="global" >
+	{!v.recordId}
+    <aura:attribute name="oppty" type="Opportunity" default="{'sobjectType' : 'Opportunity'}"></aura:attribute>
+    
+    record form - edit mode
+    <lightning:recordForm
+        recordId="{!v.recordId}"
+        objectApiName="Opportunity"
+        layoutType="Compact"
+        columns="2"
+        mode="Edit" />
+    
+    <!-- <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="Opportunity">
+        <div class="slds-box">
+            <lightning:outputField fieldName="Name" />
+            <lightning:outputField fieldName="StageName" />
+            <lightning:outputField fieldName="Type" />
+        </div>
+    </lightning:recordViewForm> -->
+    
+    <lightning:recordEditForm objectApiName="Opportunity" onsubmit="{!c.handleSubmitForm}" onsuccess="{!c.onSuccessForm}">
+        <div class="slds-box">
+            <lightning:inputField fieldName="Name" />
+            <lightning:inputField fieldName="StageName" />
+            <lightning:inputField fieldName="Type" />
+            <lightning:inputField fieldName="CloseDate" />
+            <div class="slds-m-top_medium">
+                <lightning:button variant="brand" type="submit" name="save" label="Save" onclick="{!c.onSuccess}"/>
+            </div>
+        </div>
+    </lightning:recordEditForm>
+    
+    record form - view mode
+    <!-- <lightning:recordForm
+        recordId="{!v.recordId}"
+        objectApiName="Opportunity"
+        layoutType="Compact"
+        columns="2"
+        mode="View" />
+    
+    record form - ready only
+    <lightning:recordForm
+        recordId="{!v.recordId}"
+        objectApiName="Opportunity"
+        layoutType="Compact"
+        columns="2"
+        mode="readonly" /> -->
+    
+    Custom record form 
+    <force:inputField value="{!v.oppty.Name}" />
+    <force:inputField value="{!v.oppty.StageName}" />
+    <force:inputField value="{!v.oppty.Type}" />
+    <force:inputField value="{!v.oppty.CloseDate}" />
+    <lightning:button variant="brand" name="save" label="Save" onclick="{!c.showData}"/>
+</aura:component>

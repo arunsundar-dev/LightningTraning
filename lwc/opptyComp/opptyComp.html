@@ -1,0 +1,68 @@
+<template>
+    Hello oppty!! - {recordId}
+
+    <lightning-button variant="brand" label="Click To Print Opportunity record" title="Primary action" onclick={displayRecord} class="slds-m-left_x-small"></lightning-button>
+
+    <!-- lightning record form -->
+    <!--<lightning-record-form
+        record-id={recordId}
+        object-api-name="Opportunity"
+        layout-type="Compact"
+        columns="1"
+        mode="readonly">
+    </lightning-record-form> -->
+
+    <!-- lightning record view form -->
+    <!-- <lightning-record-view-form
+            record-id={recordId}
+            object-api-name="Opportunity">
+        <div class="slds-box">
+            <lightning-output-field field-name="Name">
+            </lightning-output-field>
+            <lightning-output-field field-name="Type">
+            </lightning-output-field>
+            <lightning-output-field field-name="StageName">
+            </lightning-output-field>
+            <lightning-output-field field-name="CloseDate">
+            </lightning-output-field>
+            </div>
+    </lightning-record-view-form> 
+
+
+    <lightning-record-edit-form record-id={recordId}
+                                object-api-name="Opportunity">
+        <lightning-input-field field-name="Name">
+        </lightning-input-field>
+        <lightning-input-field field-name="Type">
+        </lightning-input-field>
+        <lightning-input-field field-name="StageName">
+        </lightning-input-field>
+        <lightning-input-field field-name="CloseDate">
+        </lightning-input-field>
+        <lightning-button
+            class="slds-m-top_small"
+            variant="brand"
+            type="submit"
+            name="update"
+            label="Update">
+        </lightning-button> 
+    </lightning-record-edit-form> -->
+
+
+<br></br>
+    <lightning-button variant="brand" label="Click To get Record" title="Primary action" onclick={callApexToLoadData} class="slds-m-left_x-small"></lightning-button>
+<br></br>
+<lightning-button variant="brand" label="Click To get specific Record" title="Primary action" onclick={getOpportunityFromInput} class="slds-m-left_x-small"></lightning-button>
+<br></br>
+<lightning-button variant="brand" label="Click To get all Record" title="Primary action" onclick={getOpportunityList} class="slds-m-left_x-small"></lightning-button>
+
+<br></br>
+<lightning-input type="text" label="Enter some text to search" onchange={searchOppty}></lightning-input>
+<lightning-datatable
+                key-field="id"
+                data={tabledata}
+                columns={columns}>
+    </lightning-datatable>
+
+
+</template>

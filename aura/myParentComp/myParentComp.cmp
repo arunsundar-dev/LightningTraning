@@ -1,0 +1,12 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:handler name="testEvent" event="c:compEventForData" action="{!c.receiveEvent}"></aura:handler>
+    <aura:attribute name="recid" type="String"></aura:attribute>
+    <c:myChildComp recordId="{!v.recordId}"></c:myChildComp>
+    <lightning:recordViewForm recordId="{!v.recid}" objectApiName="Opportunity">
+        <div class="slds-box">
+            <lightning:outputField fieldName="Name" />
+            <lightning:outputField fieldName="StageName" />
+            <lightning:outputField fieldName="Type" />
+        </div>
+    </lightning:recordViewForm>
+</aura:component>
