@@ -4,7 +4,7 @@ import { CurrentPageReference } from 'lightning/navigation';
 
 export default class SecondComponent extends LightningElement {
     @track myMessage;
-    @wire(CurrentPageReference) pageRef;
+    @wire(CurrentPageReference) pageRef; //have to specify the page reference here so that only the components inside the page are connected.
 
     connectedCallback(){
         registerListener('messageFroComp',this.myHandler,this);
